@@ -2,6 +2,7 @@ package in.weclub.srmweclubapp;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.media.Image;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -32,6 +34,7 @@ public class SignUpScroll extends AppCompatActivity {
     private EditText email;
     private EditText pass;
     private EditText conpass;
+    private ImageView userbutton;
     private Button backbtn;
     private Button reg;
     DatabaseHelper dh;
@@ -50,6 +53,14 @@ public class SignUpScroll extends AppCompatActivity {
         conpass = (EditText)findViewById(R.id.conpass);
         reg = (Button)findViewById(R.id.reg);
         backbtn= (Button) findViewById(R.id.back_button);
+        userbutton  = (ImageView)findViewById(R.id.userbutton);
+        userbutton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+             Intent i = new Intent(SignUpScroll.this,upload_pic.class);
+             startActivity(i);
+            }
+          });
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
