@@ -29,7 +29,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class SignUpScroll extends AppCompatActivity {
 
     private EditText fName;
-    private EditText lName;
+    //private EditText lName;
     private EditText mobNo;
     private EditText email;
     private EditText pass;
@@ -37,37 +37,39 @@ public class SignUpScroll extends AppCompatActivity {
     private ImageView userbutton;
     private Button backbtn;
     private Button reg;
-    DatabaseHelper dh;
+
     final FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_scroll);
-        dh = new DatabaseHelper(this);
+
         fName = (EditText)findViewById(R.id.fNameE);
         //lName = (EditText)findViewById(R.id.lName);
         mobNo = (EditText)findViewById(R.id.moNumE);
         email = (EditText)findViewById(R.id.emailE);
         pass = (EditText)findViewById(R.id.pass);
         conpass = (EditText)findViewById(R.id.conpass);
-        reg = (Button)findViewById(R.id.reg);
         backbtn= (Button) findViewById(R.id.back_button);
+        reg = (Button)findViewById(R.id.reg);
+        backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(SignUpScroll.this,LoginActivity1.class);
+                startActivity(i);
+                finish();
+            }
+        });
         userbutton  = (ImageView)findViewById(R.id.userbutton);
         userbutton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
              Intent i = new Intent(SignUpScroll.this,upload_pic.class);
              startActivity(i);
+             finish();
             }
           });
-        backbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-             Intent i = new Intent(SignUpScroll.this,LoginActivity1.class);
-             startActivity(i);
-            }
-        });
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -147,31 +149,5 @@ public class SignUpScroll extends AppCompatActivity {
 
     }
 
-    public static void Save(File file, String[] data) {
-        FileOutputStream fos = null;
-        try {
-            fos = new FileOutputStream(file);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        try {
-            try {
-                for (int i = 0; i < data.length; i++) {
-                    //fos.write(data[i].getBytes());
-                    if (i < data.length - 1) {
-                        fos.write("\n".getBytes());
-                    }
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } finally {
-            try {
-                fos.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
 
 }

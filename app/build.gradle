@@ -65,5 +65,8 @@ dependencies {
 
     //firebase storage dependecies
     implementation 'com.google.firebase:firebase-storage:16.0.1'
+
+    //for circular image view
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
 }
 apply plugin: 'com.google.gms.google-services'
