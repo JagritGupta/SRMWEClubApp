@@ -45,10 +45,10 @@ public class SignUpScroll extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_scroll);
         dh = new DatabaseHelper(this);
-        fName = (EditText)findViewById(R.id.fNameE);
+        fName = (EditText)findViewById(R.id.fName);
         //lName = (EditText)findViewById(R.id.lName);
-        mobNo = (EditText)findViewById(R.id.moNumE);
-        email = (EditText)findViewById(R.id.emailE);
+        mobNo = (EditText)findViewById(R.id.moNum);
+        email = (EditText)findViewById(R.id.email);
         pass = (EditText)findViewById(R.id.pass);
         conpass = (EditText)findViewById(R.id.conpass);
         reg = (Button)findViewById(R.id.reg);
@@ -83,28 +83,7 @@ public class SignUpScroll extends AppCompatActivity {
                     //l changed to email from last name
                     final String l = email.getText().toString().trim();
                     final String m = mobNo.getText().toString().trim();
-                    /*boolean inserted = dh.insertContact(b.toString(), fName.getText().toString(),
-                            lName.getText().toString(), email.getText().toString(), mobNo.getText().toString(),
-                            pass.getText().toString());
-                    if (inserted) {
-                        Toast.makeText(SignUpScroll.this, "Data Inserted", Toast.LENGTH_SHORT).show();
-                        Intent it = new Intent(SignUpScroll.this, LoginActivity.class);
-                        startActivity(it);
-                    }
-                    else
-                        Toast.makeText(SignUpScroll.this, "Data not Inserted", Toast.LENGTH_SHORT).show();*/
 
-                   /* String str[] = new String[6];
-                    str[0] = b.toString();
-                    str[1] = mobNo.getText().toString();
-                    str[2] = pass.getText().toString();
-                    str[3] = fName.getText().toString();
-                    str[4] = lName.getText().toString();
-                    str[5] = email.getText().toString();
-                    File f = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/SRMWEClub/data.dat");
-                    Save(f,str);
-                    Intent it = new Intent(SignUpScroll.this, Profile.class);
-                    startActivity(it);*/
                     final FirebaseDatabase database = FirebaseDatabase.getInstance();
                     final DatabaseReference ref = database.getReference("Users");
                     //final Contact contact = new Contact(m, f, l);
@@ -147,31 +126,5 @@ public class SignUpScroll extends AppCompatActivity {
 
     }
 
-    public static void Save(File file, String[] data) {
-        FileOutputStream fos = null;
-        try {
-            fos = new FileOutputStream(file);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        try {
-            try {
-                for (int i = 0; i < data.length; i++) {
-                    //fos.write(data[i].getBytes());
-                    if (i < data.length - 1) {
-                        fos.write("\n".getBytes());
-                    }
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } finally {
-            try {
-                fos.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
 
 }
