@@ -200,10 +200,6 @@ public class FindPartner extends AppCompatActivity
                 startActivity(new Intent(FindPartner.this, Profile.class));
                 //newIntent(Profile.class);
                 break;
-            case R.id.webLink2:
-                Toast.makeText(this, "In Progress...", Toast.LENGTH_SHORT).show();
-                //startActivity(new Intent(FindPartner.this, WebNav.class));
-                break;
             case R.id.eventsUp2:
                 startActivity(new Intent(FindPartner.this, UpcomingEvents.class));
                 //newIntent(UpcomingEvents.class);

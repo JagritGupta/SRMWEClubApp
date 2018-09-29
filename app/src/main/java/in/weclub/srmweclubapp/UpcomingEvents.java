@@ -230,10 +230,6 @@ public class UpcomingEvents extends AppCompatActivity
                 i.putExtra("Vendor Second", true);
                 startActivity(i);
                 break;
-            case R.id.webLink3:
-                Toast.makeText(this, "In Progress...", Toast.LENGTH_SHORT).show();
-                //startActivity(new Intent(UpcomingEvents.this, WebNav.class));
-                break;
             case R.id.virtCard2:
                 startActivity(new Intent(UpcomingEvents.this, Profile.class));
                 break;
