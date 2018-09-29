@@ -31,10 +31,10 @@ public class VendorAdapter extends RecyclerView.Adapter<VendorAdapter.ViewHolder
 
         public ViewHolder(View v) {
             super(v);
-            vendName = (TextView)v.findViewById(R.id.vendName);
-            vendLoc = (TextView)v.findViewById(R.id.vendLoc);
-            offer = (TextView)v.findViewById(R.id.offer);
-            img = (ImageView)v.findViewById(R.id.vendImg);
+            vendName = (TextView)v.findViewById(R.id.textViewTitle);
+            vendLoc = (TextView)v.findViewById(R.id.textViewShortDesc);
+            offer = (TextView)v.findViewById(R.id.textViewPrice);
+            img = (ImageView)v.findViewById(R.id.imageView);
             parentLayout = v.findViewById(R.id.vend);
         }
     }
