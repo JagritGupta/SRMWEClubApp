@@ -44,13 +44,13 @@ public class SignUpScroll extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_scroll);
-<<<<<<< HEAD
+
 
         fName = (EditText)findViewById(R.id.fNameE);
-=======
-        dh = new DatabaseHelper(this);
+
+
         fName = (EditText)findViewById(R.id.fName);
->>>>>>> upstream/master
+
         //lName = (EditText)findViewById(R.id.lName);
         mobNo = (EditText)findViewById(R.id.moNum);
         email = (EditText)findViewById(R.id.email);
