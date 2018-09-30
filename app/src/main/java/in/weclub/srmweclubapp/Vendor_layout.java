@@ -12,7 +12,7 @@ import in.weclub.srmweclubapp.R;
 
 public class Vendor_layout extends AppCompatActivity {
 
-    List<product> productList;
+    /*List<product> productList;
 
 
     RecyclerView recyclerView;
@@ -69,5 +69,5 @@ public class Vendor_layout extends AppCompatActivity {
 
         //setting adapter to recyclerview
         recyclerView.setAdapter(adapter);
-    }
+    }*/
 }
