@@ -72,6 +72,7 @@ public class EventDescription extends AppCompatActivity {
                 String s = getIntent().getExtras().getString("Event ID");
                 DataSnapshot ds = dataSnapshot.child(s);
                 String name = ds.child("Event Name").getValue(String.class);
+
                 String spk = ds.child("Speaker").getValue(String.class);
                 String url = ds.child("Image").getValue(String.class);
                 String decp = ds.child("Description").getValue(String.class);
