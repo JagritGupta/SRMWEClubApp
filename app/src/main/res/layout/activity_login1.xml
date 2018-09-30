@@ -43,7 +43,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="WE" / -->
 
-<<<<<<< HEAD
+
     <ImageView
         android:id="@+id/emailIcon"
         android:layout_width="20dp"
