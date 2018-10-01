@@ -71,7 +71,15 @@ public class SignUpScroll extends AppCompatActivity {
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (pass.getText().toString().equals(conpass.getText().toString())) {
+                if (fName.getText().toString().length()<1)
+                    fName.setError("Please enter your name");
+                else if (email.getText().toString().length()<1)
+                    email.setError("Please enter a valid email");
+                else if(mobNo.getText().toString().length()!=10)
+                    mobNo.setError("Please enter a valid 10-digit Mobile Number");
+                else if (pass.getText().toString().length()<1)
+                    pass.setError("Please enter your password");
+                else if (pass.getText().toString().equals(conpass.getText().toString())) {
                     char[] c = new char[11];
                     fName.getText().toString().getChars(0, 2, c, 0);
                     email.getText().toString().getChars(0, 2, c, 3);
