@@ -58,7 +58,6 @@ public class FindPartner extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -80,15 +79,19 @@ public class FindPartner extends AppCompatActivity
         getInfo();
     }
 
+    private void redraw(){
+        finish();
+        overridePendingTransition( 0, 0);
+        startActivity(getIntent());
+        overridePendingTransition( 0, 0);
+    }
+
     private void refresh(){
         vendorInfos.clear();
         srp.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                finish();
-                overridePendingTransition( 0, 0);
-                startActivity(getIntent());
-                overridePendingTransition( 0, 0);
+                redraw();
             }
         });
         //srp.setRefreshing(false);
@@ -108,6 +111,8 @@ public class FindPartner extends AppCompatActivity
                     String i = ds.child("Vendor Image").getValue(String.class);
                     vendorInfos.add(new VendorInfo(n,l,o,i, ds.getKey()));
                 }
+                va.notifyDataSetChanged();
+                rView.setAdapter(va);
             }
 
             @Override
@@ -115,8 +120,7 @@ public class FindPartner extends AppCompatActivity
 
             }
         });
-        va.notifyDataSetChanged();
-        rView.setAdapter(va);
+        ref.keepSynced(true);
     }
 
     @Override
