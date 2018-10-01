@@ -40,7 +40,6 @@ public class FindPartner extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private RecyclerView rView;
-    private RecyclerView.LayoutManager rLM;
     private List<VendorInfo> vendorInfos = new ArrayList<>();
     private VendorAdapter va;
     private SwipeRefreshLayout srp;
@@ -64,38 +63,14 @@ public class FindPartner extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         setTitle("Offers");
-        rView= (RecyclerView)findViewById(R.id.rec);
-        rLM = new LinearLayoutManager(this);
-        rView.setLayoutManager(rLM);
-
+        rView = (RecyclerView)findViewById(R.id.recVend);
+        rView.setLayoutManager(new LinearLayoutManager(this));
 
         srp = (SwipeRefreshLayout)findViewById(R.id.swipeContainerPartner);
 
-        va = new VendorAdapter(this,vendorInfos);
+        va = new VendorAdapter(FindPartner.this,vendorInfos);
 
-        FirebaseDatabase fd = FirebaseDatabase.getInstance();
-        final DatabaseReference ref = fd.getReference("Offers");
-                ref.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        //vendorInfos.clear();
-                        for(DataSnapshot ds : dataSnapshot.getChildren()){
-                            String n = ds.child("Vendor Name").getValue(String.class);
-                            String l = ds.child("Vendor Location").getValue(String.class);
-                            String o = ds.child("Offer").getValue(String.class);
-                            String i = ds.child("Vendor Image").getValue(String.class);
-                            vendorInfos.add(new VendorInfo(n,l,o,i, ds.getKey()));
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-
-                    }
-                });
-
-        va.notifyDataSetChanged();
-        rView.setAdapter(va);
+        getInfo();
         refresh();
     }
 
