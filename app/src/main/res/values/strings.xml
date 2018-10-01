@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SRMWEClubApp</string>
+    <string name="app_name">SRM WE Club</string>
     <string name="title_activity_login">Welcome</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
