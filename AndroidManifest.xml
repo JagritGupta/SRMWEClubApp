@@ -48,8 +48,15 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".LoginActivity1"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".EventDescription" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:label=""/>
+
+        <activity android:name=".EventDescription"
+            android:label="WE"
+
+            android:roundIcon="@drawable/we"
+
+            android:theme="@style/AppTheme.NoActionBar"/>
 
         <meta-data
             android:name="preloaded_fonts"
@@ -85,7 +92,6 @@
             android:label="@string/title_activity_enrolled_events"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ClaimReward" />
-        <activity android:name=".layout_products"></activity>
     </application>
 
 </manifest>
