@@ -48,8 +48,15 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".LoginActivity1"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".EventDescription" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:label=""/>
+
+        <activity android:name=".EventDescription"
+            android:label="WE"
+
+            android:roundIcon="@drawable/we"
+
+            android:theme="@style/AppTheme.NoActionBar"/>
 
         <meta-data
             android:name="preloaded_fonts"
