@@ -53,7 +53,7 @@ public class EditProfile extends AppCompatActivity {
                 String e = user.getEmail();
                 TextView email = (TextView)findViewById(R.id.emailE);
                 email.setText(e);
-                fName.setText(f); moN.setText(m);
+                fName.setText(fName.getText().toString()); moN.setText(moN.getText().toString());
             }
 
             @Override
