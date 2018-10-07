@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="in.weclub.srmweclubapp.EventDescription">
+
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="match_parent"
+        android:layout_height="136dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@drawable/background_blue" />
+
+    <TextView
+        android:layout_width="323dp"
+        android:layout_height="43dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="94dp"
+        android:letterSpacing="5"
+        android:text="EVENT NAME"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        tools:letterSpacing="5" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imageView9"
+        android:background="#d4d3d3"
+        android:text="Description"
+        android:textAlignment="center"
+        android:textColor="#0a0909"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imageView9"
+        android:background="#d4d3d3"
+        android:text="Description"
+        android:textAlignment="center"
+        android:textColor="#0a0909"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView14">
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="18dp"
+            android:text="Rubaroo is the National Level Cultural Festival of SRM University, NCR Campus.Rubaroo is the National Level Cultural Festival of SRM University, NCR Campus.Rubaroo is the National Level Cultural Festival of SRM University, NCR Campus.Rubaroo is the National Level Cultural Festival of SRM University, NCR Campus.Rubaroo is the National Level Cultural Festival of SRM University, NCR Campus.Rubaroo is the National Level Cultural Festival of SRM University, NCR Campus.Rubaroo is the National Level Cultural Festival of SRM University, NCR Campus.Rubaroo is the National Level Cultural Festival of SRM University, NCR Campus.Rubaroo is the National Level Cultural Festival of SRM University, NCR Campus.Rubaroo is the National Level Cultural Festival of SRM University, NCR Campus."
+            android:textColor="#181515"
+            android:textSize="16dp" />
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="177dp"
+        android:background="#d4d3d3"
+        android:text="About Speakers"
+        android:textAlignment="center"
+        android:textColor="#0a0909"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView18"
+        android:layout_marginTop="-177dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:text="Nitibha Kaul (aka Nitiva Kaul) is an Indian reality TV show celebrity, model and an IT and business professional based in Delhi, India. Kaul came to media limelight in October 2016, after she was chosen as a contestant for season 10 version of India’s popular reality show Bigg Boss.
+
+It was reported that Kaul left a high-profile and lucrative job at Google India to join the reality TV show. Many prominent media outlets in India reported her story when she was declared a contestant for the show.
+
+Kaul’s role on Bigg Boss 10 was initially praised by many in India and abroad. However, as the show progressed she became more controversial and online hangtags calling for her elimination surfaced on the internet."
+            android:textColor="#181515"
+            android:textSize="16dp" />
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/verifyReg"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/button_ui_bg"
+        android:backgroundTint="@color/VerifyButton"
+        android:text="Verify Resitration"
+
+        android:textColor="@color/cardview_light_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+</RelativeLayout>
